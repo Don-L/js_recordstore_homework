@@ -18,6 +18,7 @@ RecordStore.prototype = {
   },
 
   printInventory: function(){
+    console.log(this.name + ', ' + this.city + '; INVENTORY: ');
     if (this.records.length === 0) {
       console.log('Inventory is empty');
     }
@@ -38,7 +39,8 @@ RecordStore.prototype = {
 
   printFinances: function() {
 
-    console.log('Cash in bank: ' + this.balance / 100 + '; ' + 'Value of stock: ' + this.stockValue / 100);
+    console.log(this.name + ', ' + this.city + '; FINANCIAL REPORT: ');
+    console.log('Cash in bank: ' + '£' + this.balance / 100 + '; ' + 'Value of stock: ' + '£' + this.stockValue / 100);
   },
 
   buyFromCollector: function(collector, record) {

@@ -50,6 +50,7 @@ describe('RecordStore', function() {
 
   it('should be possible to print its inventory', function() {
 
+    recordstore1.printInventory();
     recordstore2.printInventory();
     assert.deepEqual('object', typeof recordstore2.records[0]);
   })
