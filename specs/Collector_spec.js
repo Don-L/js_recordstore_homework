@@ -18,6 +18,8 @@ describe('Collector', function() {
     collector2.addRecord(record2);
 
     recordstore1 = new RecordStore('Missing', 'Glasgow');
+
+    recordstore1.addRecord(record1);
   })
 
   it('should have a name', function() {
@@ -53,12 +55,13 @@ describe('Collector', function() {
     assert.equal(629, collector2.balance);
   })
 
-  it('should be able to buy a record', function() {
+  it('should be able to buy a record from a store', function() {
 
     collector1.balance = 1000;
-    collector1.buyRecord(record1);
+    collector1.buyRecord(recordstore1, record1);
     assert.equal(1, collector1.records.length);
     assert.equal(1, collector1.balance);
+    assert.equal(0, recordstore1.records.length);
   })
 
   

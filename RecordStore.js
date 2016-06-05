@@ -1,3 +1,5 @@
+var Collector = require('./Collector.js');
+
 var RecordStore = function(name, city){
 
   this.name = name;
@@ -39,8 +41,9 @@ RecordStore.prototype = {
     console.log('Cash in bank: ' + this.balance / 100 + '; ' + 'Value of stock: ' + this.stockValue / 100);
   },
 
-  buyFromCollector: function(record) {
+  buyFromCollector: function(collector, record) {
 
+    collector.sellToStore(record);
     this.addRecord(record);
     var purchasePrice = Math.floor(record.price * 0.9);
     this.balance -= purchasePrice;

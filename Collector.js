@@ -25,8 +25,9 @@ Collector.prototype = {
     this.balance += sellingPrice;
   },
 
-  buyRecord: function(record) {
+  buyRecord: function(recordStore, record) {
 
+    recordStore.sellRecord(record);
     this.addRecord(record);
     this.balance -= record.price;
   }
